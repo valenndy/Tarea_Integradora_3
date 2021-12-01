@@ -4,16 +4,20 @@ public class Server {
     
     private double cache;
     private int numProcessor;
-    private String MarkProcessor;
+    private Processor MarkProcessor;
     private double ram;
     private int disc;
     private double CapacityDisc;
 
 
-    public Server(double cache, int numProcessor, String MarkProcessor, double ram, int disc, double CapacityDisc) {
+    public Server(double cache, int numProcessor, int MarkProcessor, double ram, int disc, double CapacityDisc) {
         this.cache = cache;
         this.numProcessor = numProcessor;
-        this.MarkProcessor = MarkProcessor;
+        if (MarkProcessor == 1){
+            this.MarkProcessor = Processor.INTEL;
+        }else {
+            this.MarkProcessor = Processor.AMD;
+        }
         this.ram = ram;
         this.disc = disc;
         this.CapacityDisc = CapacityDisc;
@@ -34,14 +38,6 @@ public class Server {
 
     public void setNumProcessor(int numProcessor) {
         this.numProcessor = numProcessor;
-    }
-
-    public String getMarkProcessor() {
-        return this.MarkProcessor;
-    }
-
-    public void setMarkProcessor(String MarkProcessor) {
-        this.MarkProcessor = MarkProcessor;
     }
 
     public double getRam() {
@@ -66,6 +62,14 @@ public class Server {
 
     public void setCapacityDisc(double CapacityDisc) {
         this.CapacityDisc = CapacityDisc;
+    }
+
+    public Processor getMarkProcessor() {
+        return this.MarkProcessor;
+    }
+
+    public void setMarkProcessor(Processor MarkProcessor) {
+        this.MarkProcessor = MarkProcessor;
     }
 
 

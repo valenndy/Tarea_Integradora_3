@@ -2,11 +2,11 @@ package model;
 
 public class Company {
     private String name;
-    private int nit;
+    private String nit;
 
 
 
-    public Company(String name, int nit) {
+    public Company(String name, String nit) {
         this.name = name;
         this.nit = nit;
     }
@@ -19,13 +19,15 @@ public class Company {
         this.name = name;
     }
 
-    public int getNit() {
+
+    public String getNit() {
         return this.nit;
     }
 
-    public void setNit(int nit) {
+    public void setNit(String nit) {
         this.nit = nit;
     }
+  
 
 
 

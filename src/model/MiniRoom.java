@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class MiniRoom {
 
     private int num;
@@ -8,6 +10,8 @@ public class MiniRoom {
     private int colum;
     private int row;
     private boolean window;
+    private ArrayList <Server> rack;
+    private Company company;
     
 
 
@@ -18,10 +22,28 @@ public class MiniRoom {
         this.row=row;
         this.colum=colum;
         this.window=window;
+        this.setRack(new ArrayList<>());
+        this.setCompany(null);
     }
 
     //TODO insert method for calculate rent
 
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    public ArrayList <Server> getRack() {
+        return rack;
+    }
+
+    public void setRack(ArrayList <Server> rack) {
+        this.rack = rack;
+    }
 
     public int getNum() {
         return this.num;

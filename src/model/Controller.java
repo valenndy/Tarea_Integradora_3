@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Controller {
 
     private MiniRoom[][] miniRooms;
@@ -40,6 +42,30 @@ public class Controller {
         }
         
         return message;
+    }
+
+    public String rentAMiniroom(int num, String name, String nit, ArrayList<Server> rack) {
+        MiniRoom room=searchRoom(num);
+        room.setCompany(new Company(name, nit));
+        room.setRack(rack);
+        room.setRent(true);
+
+        return "Rent a mini-room success";
+
+    }
+
+    public MiniRoom searchRoom(int num){
+        MiniRoom room=null;
+        for (int i = 0; i < miniRooms.length; i++) {
+            for (int j = 0; j < miniRooms[0].length; j++) {
+                boolean find = false;
+                if (miniRooms[i][j].getNum()==num) {
+                    find=true;
+                   room=miniRooms[i][j];
+                }
+        }
+    }
+    return room;
     }
 
 }
