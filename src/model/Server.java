@@ -1,7 +1,7 @@
 package model;
 
 public class Server {
-    
+
     private double cache;
     private int numProcessor;
     private Processor MarkProcessor;
@@ -9,13 +9,12 @@ public class Server {
     private int disc;
     private double CapacityDisc;
 
-
     public Server(double cache, int numProcessor, int MarkProcessor, double ram, int disc, double CapacityDisc) {
         this.cache = cache;
         this.numProcessor = numProcessor;
-        if (MarkProcessor == 1){
+        if (MarkProcessor == 1) {
             this.MarkProcessor = Processor.INTEL;
-        }else {
+        } else {
             this.MarkProcessor = Processor.AMD;
         }
         this.ram = ram;
@@ -23,6 +22,9 @@ public class Server {
         this.CapacityDisc = CapacityDisc;
     }
 
+    public double getProccesCapacity() {
+        return CapacityDisc + ram;
+    }
 
     public double getCache() {
         return this.cache;
@@ -71,10 +73,5 @@ public class Server {
     public void setMarkProcessor(Processor MarkProcessor) {
         this.MarkProcessor = MarkProcessor;
     }
-
-
-
-    
-
 
 }
