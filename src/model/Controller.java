@@ -87,7 +87,7 @@ public class Controller {
     }
 
     public String cancelRentAMiniRoom(int id) {
-        String message = "THe mini room doesn't exist";
+        String message = "The mini room doesn't exist";
         if (searchRoom(id) != null) {
             MiniRoom mini = searchRoom(id);
             double proccesCapacity = mini.cancelRent();
@@ -186,19 +186,19 @@ public class Controller {
 
                 break;
             case "Z":
-                /*
-                 * for (int j = 0; j < miniRooms[0].length; j++) {
-                 * miniRooms[0][j].setStatus(false);
-                 * miniRooms[miniRooms[0].length-1][j].setStatus(false);
-                 * }
-                 * 
-                 * for (int i = 0,j=miniRooms[0].length; i < miniRooms.length; i++) {
-                 * 
-                 * }
-                 * 
-                 * 
-                 * message+=showMap();
-                 */
+                for (int i = 0; i < miniRooms.length; i++) {
+                    for (int j = 0; j < miniRooms[0].length; j++) {
+                        MiniRoom miniroom = miniRooms[i][j];
+
+                        if ((i + 1) % 2 != 0) {
+                            miniroom.setStatus(false);
+                        }
+
+                    }
+                }
+
+                message += showMap();
+
                 break;
             case "H":
 
